@@ -12,3 +12,10 @@ class Message(db.Model, SerializerMixin):
     __tablename__ = 'messages'
 
     id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.String(255))  # Change the data type and length as needed
+    username = db.Column(db.String(50))  # Change the length as needed
+
+    def __init__(self, body, username):
+        self.body = body
+        self.username = username
+
